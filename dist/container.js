@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const inversify_1 = require("inversify");
+const types_1 = require("./types");
+const entities_1 = require("./entities");
+const container = new inversify_1.Container();
+exports.container = container;
+container.bind(types_1.TYPES.Aircraft).to(entities_1.BoeingAircraft);
+container.bind(types_1.TYPES.Wing).to(entities_1.BoeingWing);
+container.bind(types_1.TYPES.Engine).to(entities_1.PWEngine);
